@@ -15,41 +15,6 @@ button {
 
 /*Glitch*/
 
-#app {
-  background: rgb(10, 10, 10);
-  height: 100vh;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(0, 0, 0, 0.9)),
-    repeating-linear-gradient(
-      0,
-      transparent,
-      transparent 2px,
-      black 3px,
-      black 3px
-    ),
-    url("https://images.unsplash.com/photo-1506399558188-acca6f8cbf41?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=7118759521e3184778a3b5e010e202c6");
-  background-size: cover;
-  background-position: center;
-  z-index: 1;
-}
-
-#wrapper {
-  text-align: center;
-}
-
-.sub {
-  color: rgb(100, 220, 220);
-  letter-spacing: 1em;
-}
-
-// Here's the meat and potatoes.
-
 /* Our mixin positions a copy of our text
 directly on our existing text, while
 also setting content to the appropriate
