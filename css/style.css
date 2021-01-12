@@ -1,0 +1,296 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+button {
+  background-color: black;
+  border: 2px solid #ffffff;
+  color: white;
+  padding: 4px 12px;
+  -webkit-box-shadow: 3px 3px 0px 0px #ae338b;
+  -moz-box-shadow: 3px 3px 0px 0px #ae338b;
+  box-shadow: 3px 3px 0px 0px #ae338b;
+}
+
+/*Glitch*/
+#app {
+  background: #0a0a0a;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(0, 0, 0, 0.9)), repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px), url("https://images.unsplash.com/photo-1506399558188-acca6f8cbf41?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=7118759521e3184778a3b5e010e202c6");
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+#wrapper {
+  text-align: center;
+}
+
+.sub {
+  color: #64dcdc;
+  letter-spacing: 1em;
+}
+
+/* Our mixin positions a copy of our text
+directly on our existing text, while
+also setting content to the appropriate
+text set in the data-text attribute. */
+.glitch {
+  position: relative;
+  color: white;
+  font-size: 4em;
+  letter-spacing: 0.5em;
+  /* Animation provies a slight random skew. Check bottom of doc
+  for more information on how to random skew. */
+  animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+  /* Creates an initial clip for our glitch. This works in
+  a typical top,right,bottom,left fashion and creates a mask
+  to only show a certain part of the glitch at a time. */
+  clip: rect(44px, 450px, 56px, 0);
+  /* Runs our glitch-anim defined below to run in a 5s loop, infinitely,
+  with an alternating animation to keep things fresh. */
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  left: -2px;
+  text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+  animation: glitch-anim2 1s infinite linear alternate-reverse;
+}
+
+/* Creates an animation with 20 steaps. For each step, it calculates 
+a percentage for the specific step. It then generates a random clip
+box to be used for the random glitch effect. Also adds a very subtle
+skew to change the 'thickness' of the glitch.*/
+@keyframes glitch-anim {
+  0% {
+    clip: rect(28px, 9999px, 91px, 0);
+    transform: skew(0.68deg);
+  }
+  5% {
+    clip: rect(83px, 9999px, 18px, 0);
+    transform: skew(0.98deg);
+  }
+  10% {
+    clip: rect(20px, 9999px, 38px, 0);
+    transform: skew(0.72deg);
+  }
+  15% {
+    clip: rect(24px, 9999px, 94px, 0);
+    transform: skew(0.45deg);
+  }
+  20% {
+    clip: rect(70px, 9999px, 79px, 0);
+    transform: skew(0.12deg);
+  }
+  25% {
+    clip: rect(44px, 9999px, 88px, 0);
+    transform: skew(0.62deg);
+  }
+  30% {
+    clip: rect(42px, 9999px, 96px, 0);
+    transform: skew(0.32deg);
+  }
+  35% {
+    clip: rect(29px, 9999px, 38px, 0);
+    transform: skew(0.67deg);
+  }
+  40% {
+    clip: rect(88px, 9999px, 26px, 0);
+    transform: skew(0.02deg);
+  }
+  45% {
+    clip: rect(66px, 9999px, 60px, 0);
+    transform: skew(0.13deg);
+  }
+  50% {
+    clip: rect(10px, 9999px, 34px, 0);
+    transform: skew(0.12deg);
+  }
+  55% {
+    clip: rect(20px, 9999px, 69px, 0);
+    transform: skew(0.92deg);
+  }
+  60% {
+    clip: rect(69px, 9999px, 10px, 0);
+    transform: skew(0.5deg);
+  }
+  65% {
+    clip: rect(90px, 9999px, 10px, 0);
+    transform: skew(0.02deg);
+  }
+  70% {
+    clip: rect(93px, 9999px, 3px, 0);
+    transform: skew(0.65deg);
+  }
+  75% {
+    clip: rect(46px, 9999px, 70px, 0);
+    transform: skew(0.76deg);
+  }
+  80% {
+    clip: rect(100px, 9999px, 15px, 0);
+    transform: skew(0.6deg);
+  }
+  85% {
+    clip: rect(45px, 9999px, 63px, 0);
+    transform: skew(0.43deg);
+  }
+  90% {
+    clip: rect(24px, 9999px, 33px, 0);
+    transform: skew(0.53deg);
+  }
+  95% {
+    clip: rect(49px, 9999px, 60px, 0);
+    transform: skew(0.86deg);
+  }
+  100% {
+    clip: rect(25px, 9999px, 35px, 0);
+    transform: skew(0.56deg);
+  }
+}
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(85px, 9999px, 48px, 0);
+    transform: skew(0.19deg);
+  }
+  5% {
+    clip: rect(17px, 9999px, 22px, 0);
+    transform: skew(0.16deg);
+  }
+  10% {
+    clip: rect(76px, 9999px, 61px, 0);
+    transform: skew(0.57deg);
+  }
+  15% {
+    clip: rect(34px, 9999px, 84px, 0);
+    transform: skew(0.07deg);
+  }
+  20% {
+    clip: rect(44px, 9999px, 40px, 0);
+    transform: skew(0.59deg);
+  }
+  25% {
+    clip: rect(93px, 9999px, 89px, 0);
+    transform: skew(0.22deg);
+  }
+  30% {
+    clip: rect(8px, 9999px, 68px, 0);
+    transform: skew(0.68deg);
+  }
+  35% {
+    clip: rect(38px, 9999px, 97px, 0);
+    transform: skew(0.31deg);
+  }
+  40% {
+    clip: rect(65px, 9999px, 64px, 0);
+    transform: skew(0.31deg);
+  }
+  45% {
+    clip: rect(10px, 9999px, 20px, 0);
+    transform: skew(0.96deg);
+  }
+  50% {
+    clip: rect(80px, 9999px, 79px, 0);
+    transform: skew(0.67deg);
+  }
+  55% {
+    clip: rect(4px, 9999px, 78px, 0);
+    transform: skew(0.28deg);
+  }
+  60% {
+    clip: rect(9px, 9999px, 96px, 0);
+    transform: skew(0.79deg);
+  }
+  65% {
+    clip: rect(56px, 9999px, 100px, 0);
+    transform: skew(0.01deg);
+  }
+  70% {
+    clip: rect(76px, 9999px, 20px, 0);
+    transform: skew(0.03deg);
+  }
+  75% {
+    clip: rect(14px, 9999px, 9px, 0);
+    transform: skew(0.31deg);
+  }
+  80% {
+    clip: rect(34px, 9999px, 25px, 0);
+    transform: skew(0.84deg);
+  }
+  85% {
+    clip: rect(70px, 9999px, 75px, 0);
+    transform: skew(0.57deg);
+  }
+  90% {
+    clip: rect(59px, 9999px, 81px, 0);
+    transform: skew(0.83deg);
+  }
+  95% {
+    clip: rect(53px, 9999px, 97px, 0);
+    transform: skew(0.48deg);
+  }
+  100% {
+    clip: rect(34px, 9999px, 56px, 0);
+    transform: skew(0.01deg);
+  }
+}
+@keyframes glitch-skew {
+  0% {
+    transform: skew(-4deg);
+  }
+  10% {
+    transform: skew(5deg);
+  }
+  20% {
+    transform: skew(4deg);
+  }
+  30% {
+    transform: skew(0deg);
+  }
+  40% {
+    transform: skew(-3deg);
+  }
+  50% {
+    transform: skew(1deg);
+  }
+  60% {
+    transform: skew(-1deg);
+  }
+  70% {
+    transform: skew(5deg);
+  }
+  80% {
+    transform: skew(-1deg);
+  }
+  90% {
+    transform: skew(2deg);
+  }
+  100% {
+    transform: skew(2deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

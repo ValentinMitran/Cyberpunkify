@@ -1,4 +1,3 @@
-<h1> WARNING: PROJECT TEMPORARY ON HOLD DUE TO WORKING ON <a href="http://mortalcore.com" target="_blank"> MORTAL CORE </a> </h1>
 <h1 align="center">
   <br>
 <img src="https://github.com/ValentinMitran/Cyberpunkify/blob/master/cyberpunkify.png" alt="Cyberpunkify Image" width="300">
